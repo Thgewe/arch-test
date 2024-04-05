@@ -1,0 +1,14 @@
+:root {
+    --z-index-shade: 10;
+
+    /* fonts */
+    --font-main: Helvetica Neue, Arial, Verdana, sans-serif;
+    --font-alt: Open Sans, Helvetica Neue, Arial, Verdana, sans-serif;
+}
+#root-app[data-theme="default"] {
+    --color-header: #343434;
+    --color-dropdown-bg: #4e5257;
+    --color-text-white: #f6f8f9;
+    --color-headline: #123;
+    --color-link: #176093;
+}
