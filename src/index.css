@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
 body {
   font-family: var(--font-main);
   -webkit-font-smoothing: antialiased;

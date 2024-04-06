@@ -1,0 +1,8 @@
+.footer {
+    color: var(--color-text-lowlight);
+    font-size: .75rem;
+    width: 100%;
+
+    max-width: var(--max-width);
+    padding: .25rem var(--padding-inline-default);
+}
