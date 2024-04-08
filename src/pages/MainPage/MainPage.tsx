@@ -13,7 +13,7 @@ const MainPage = () => {
     const { data, isLoading, isError, isFetching } = useGetNewsListQuery(page);
 
     const scrollHandler = debounce((isFetch: boolean) => {
-        if (mainPageRef.current!.clientHeight
+        if (mainPageRef.current && mainPageRef.current!.clientHeight
             - document.documentElement.clientHeight
             - document.documentElement.scrollTop
             < document.documentElement.clientHeight + 100 && !isFetch) {
