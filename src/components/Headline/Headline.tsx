@@ -3,18 +3,19 @@ import cl from "./headline.module.css";
 
 interface IHeadlineProps {
     text: string
-    color: "orange"
+    color?: "default" | "orange"
 }
 
-const Headline = ({text, color}: IHeadlineProps) => {
+const Headline = ({text, color = "default"}: IHeadlineProps) => {
 
-    let className = cl.line;
+    let className = "";
 
     switch (color) {
         case "orange":
             className = cl.line + ' ' + (cl.orange);
             break;
         default:
+            className = cl.line;
     }
 
     return (

@@ -1,7 +1,7 @@
 .line {
-    background-color: #ffe8d8;
-    color: #ff8a3c;
-    border-left: .375rem solid #ffd5b8;
+    background-color: #e8ebef;
+    color: #123;
+    border-left: .375rem solid #d8dde4;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
