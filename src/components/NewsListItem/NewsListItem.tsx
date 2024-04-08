@@ -10,8 +10,8 @@ interface INewsListItemProps {
 
 const NewsListItem: FC<INewsListItemProps> = ({item}) => {
 
-    const src = item.html_footer.match(/(?<=src=").*?(?=")/)
-        ? item.html_footer.match(/(?<=src=").*?(?=")/)![0]
+    const src = item.html_footer.match(/(?<=src=").*?(?=")|(?<=src=\\").*?(?=\\")/)
+        ? item.html_footer.match(/(?<=src=").*?(?=")|(?<=src=\\").*?(?=\\")/)![0]
         : null
 
     return (
