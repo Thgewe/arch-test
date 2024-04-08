@@ -17,7 +17,7 @@ const OngoingsTrack = ({list}: IOngoingsTrackProps) => {
     return (
         <div className={cl.track}>
             {list.map((anime) =>
-                <Link className={cl.card} to={`animes/${anime.id}`} key={anime.id}>
+                <Link className={cl.card} to={`/animes/${anime.id}`} key={anime.id}>
                     <div className={cl.image}>
                         <img src={BASE_API_IMAGE_SRC + anime.image.preview} alt={anime.name}/>
                     </div>

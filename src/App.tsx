@@ -1,19 +1,21 @@
 import React from 'react';
-import './App.css';
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import routes from "./router/routes";
-import Layout from "./components/Layout/Layout";
+import cl from './App.module.css';
+import {Outlet} from "react-router-dom";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 function App() {
-  const router = createBrowserRouter(routes);
-
-  return (
-    <div className="App" data-theme="default" id="root-app">
-        <Layout>
-            <RouterProvider router={router} />
-        </Layout>
-    </div>
-  );
+    return (
+        <div className={cl.App} data-theme="default" id="root-app">
+            <div className={cl.header}>
+                <Header />
+            </div>
+            <main className={cl.main}>
+                <Outlet />
+            </main>
+            <Footer />
+        </div>
+    );
 }
 
 export default App;

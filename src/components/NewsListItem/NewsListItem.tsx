@@ -15,7 +15,7 @@ const NewsListItem: FC<INewsListItemProps> = ({item}) => {
         : null
 
     return (
-        <Link className={cl.item} to={"news/" + item.id}>
+        <Link className={cl.item} to={"/news/" + item.id}>
             <div className={cl.thumbnail} style={{backgroundImage: "url(" + src + ")"}}>
             </div>
             <div className={cl.status}>
