@@ -1,6 +1,8 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 import INews from "../models/shikimoriAPI/INews";
 import IShortAnime from "../models/shikimoriAPI/IShortAnime";
+import {IAnime} from "../models/shikimoriAPI/IAnime";
+import {IRoles} from "../models/shikimoriAPI/IRoles";
 
 export const shikimoriApi = createApi({
     reducerPath: "shikimoriApi",
@@ -26,8 +28,24 @@ export const shikimoriApi = createApi({
         }),
         getAnimeListMainOngoing: builder.query<IShortAnime[], void>({
             query: () => ({url: "animes", params: {status: "ongoing", order: "popularity", limit: 8}})
-        })
+        }),
+        getAnimeById: builder.query<IAnime, string>({
+            query: (id) => ({
+                url: `animes/${id}`
+            })
+        }),
+        getAnimeRolesById: builder.query<IRoles[], string>({
+            query: (id) => ({
+                url: `animes/${id}/roles`
+            })
+        }),
     })
 });
 
-export const { useGetNewsListQuery, useGetNewsItemByIdQuery, useGetAnimeListMainOngoingQuery } = shikimoriApi;
+export const {
+    useGetNewsListQuery,
+    useGetNewsItemByIdQuery,
+    useGetAnimeListMainOngoingQuery,
+    useGetAnimeByIdQuery,
+    useGetAnimeRolesByIdQuery,
+} = shikimoriApi;

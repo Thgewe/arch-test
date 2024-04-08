@@ -1,0 +1,42 @@
+.heading {
+    padding: .375rem .75rem;
+    line-height: 1.25rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-alt);
+}
+.allNews {
+    background-color: #e9f7fb;
+    color: #81cfea;
+    border-left-color: #d7f0f8;
+}
+
+.news {
+    color: #ff8a3c;
+    background-color: #ffe8d8;
+    border-left: 0.3125rem solid #ffd5b8;
+}
+.comments {
+    margin-bottom: .625rem;
+    color: #123;
+    background-color: #e8ebef;
+    border-left: 0.3125rem solid #d8dde4;
+}
+.filter {
+    color: #123;
+    background-color: #e8ebef;
+    border-left: 0.3125rem solid #d8dde4;
+    margin-bottom: .625rem;
+}
+.onTheScreens {
+    margin-bottom: .625rem;
+    color: #123;
+    background-color: #e8ebef;
+    border-left: 0.3125rem solid #d8dde4;
+}
+.default {
+    color: #123;
+    background-color: #e8ebef;
+    border-left: 0.3125rem solid #d8dde4;
+    margin-bottom: .625rem;
+}

@@ -1,0 +1,28 @@
+.block {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+.grid {
+    display: grid;
+    column-gap: 4%;
+    row-gap: 1.875rem;
+    grid-template-columns: repeat(7, 1fr);
+}
+.card {
+    min-width: 0;
+    text-decoration: none;
+}
+.name {
+    margin-top: .3125rem;
+    font-weight: 700;
+    font-size: .8125rem;
+    color: var(--color-link);
+    line-height: 1.65;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    word-wrap: break-word;
+}
+.card img {
+    width: 100%;
+}

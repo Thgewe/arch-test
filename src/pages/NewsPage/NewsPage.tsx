@@ -4,6 +4,7 @@ import {useGetNewsItemByIdQuery} from "../../services/shikimoriAPI";
 import cl from "./newsPage.module.css";
 import {timeElapsed} from "../../utils/getTimeElapsed";
 import Topic from "../../components/Topic/Topic";
+import PageHeadline from "../../components/PageHeadline/PageHeadline";
 
 // TODO: error, loading, no data handling
 //       images and slider
@@ -34,7 +35,7 @@ const NewsPage = () => {
 
     return (
         <>
-            <h1 className={cl.heading}>{data.topic_title}</h1>
+            <PageHeadline titleRu={data.topic_title}/>
             <div className={cl.author}>
                 <div className={cl.avatar}>
                     <img className={cl.image} src={data.user.avatar} alt="user avatar"/>

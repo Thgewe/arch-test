@@ -1,0 +1,15 @@
+.prop {
+    line-height: 1.65;
+    font-family: var(--font-main);
+    font-size: .8125rem;
+    margin-bottom: .25rem;
+}
+.name {
+    color: #7b8084;
+    display: inline;
+}
+.value {
+    color: #112233;
+    font-weight: 700;
+    display: inline;
+}

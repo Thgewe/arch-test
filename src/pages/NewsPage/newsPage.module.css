@@ -1,21 +1,7 @@
-.heading {
-    font-family: var(--font-alt);
-    font-size: 0;
-    margin-bottom: 1.25rem;
-}
-.heading a {
-    color: var(--color-headline);
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: 400;
-}
-
 .author {
     display: flex;
     align-items: flex-start;
     margin-bottom: .625rem;
-    /*width: calc(100% - 52px);*/
 }
 .avatar {
     font-size: 0;
