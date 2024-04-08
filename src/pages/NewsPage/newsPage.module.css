@@ -1,0 +1,109 @@
+.heading {
+    font-family: var(--font-alt);
+    font-size: 0;
+    margin-bottom: 1.25rem;
+}
+.heading a {
+    color: var(--color-headline);
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.author {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: .625rem;
+    /*width: calc(100% - 52px);*/
+}
+.avatar {
+    font-size: 0;
+    margin-right: .625rem;
+}
+.image {
+    height: 2.25rem;
+}
+.info {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: flex-start;
+}
+.bottom {
+    margin-top: .1875rem;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    font-size: .75rem;
+    line-height: 1.25rem;
+    display: flex;
+    align-items: center;
+}
+.nickname {
+    margin-left: .625rem;
+    line-height: 1.125rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.nickname > span {
+    font-size: .9375rem;
+    height: 1.125rem;
+    font-weight: 600;
+}
+.commentsCounter {
+    position: relative;
+    padding-left: 1.1875rem;
+    padding-right: .9375rem;
+    margin-right: .9375rem;
+}
+.commentsCounter::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 1.1875rem;
+    height: .875rem;
+    background: url("../../images/svg/comments.svg") no-repeat;
+    background-size: contain;
+}
+.commentsCounter::after {
+    content: '';
+    display: block;
+    width: .0625rem;
+    height: .9375rem;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #acb1b4;
+}
+.time {
+    position: relative;
+    padding-left: 1.125rem;
+}
+.time::before {
+    content: '';
+    background: url("../../images/svg/feather.svg") no-repeat;
+    background-size: contain;
+    display: block;
+    width: .9375rem;
+    height: 14px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.text {
+    font-family: var(--font-alt);
+    line-height: 1.65;
+    font-size: .8125rem;
+    margin-bottom: .625rem;
+}
+.text br {
+    content: '';
+    display: block;
+    margin-bottom: .3125rem;
+}
