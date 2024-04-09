@@ -1,11 +1,14 @@
 import React from 'react';
 import cl from "./header.module.css";
+import {Link} from "react-router-dom";
+import {HOME_ROUTE} from "../../utils/constants";
+import Navbar from "../Navbar/Navbar";
 
 const Header = () => {
     return (
         <header className={cl.header}>
-            <div>FRONT</div>
-            <div>Войти</div>
+            <Link to={HOME_ROUTE} className={cl.logo}>SHIKI</Link>
+            <Navbar />
         </header>
     );
 };

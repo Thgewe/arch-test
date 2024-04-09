@@ -1,0 +1,14 @@
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 500;
+}
+.nav > a {
+    font-size: 1.125rem;
+    color: var(--color-text-white);
+    font-weight: 500;
+}
+.nav > a.active {
+    color: #fec951;
+}
