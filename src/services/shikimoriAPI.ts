@@ -18,8 +18,11 @@ export const shikimoriApi = createApi({
                 news.pop();
                 return news;
             },
-            merge: (currentCacheData, newData) => {
-                currentCacheData.push(...newData);
+            merge: (currentCacheData, newData, otherArgs) => {
+                if (otherArgs.arg !== 1)
+                    currentCacheData.push(...newData);
+                else
+                    return newData;
             },
             forceRefetch({ currentArg, previousArg }) {
                 return currentArg !== previousArg;
