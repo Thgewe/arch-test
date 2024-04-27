@@ -5,6 +5,9 @@ import {IAnime} from "../models/shikimoriAPI/IAnime";
 import {IRoles} from "../models/shikimoriAPI/IRoles";
 import {IAnimeParams} from "../models/shikimoriAPI/IAnimeParams";
 import {BASE_API_URL} from "../utils/constants";
+import {IShortManga} from "../models/shikimoriAPI/IShortManga";
+import {IMangaParams} from "../models/shikimoriAPI/IMangaParams";
+import {IFilterParams} from "../models/shikimoriAPI/IFilterParams";
 
 export const shikimoriApi = createApi({
     reducerPath: "shikimoriApi",
@@ -60,6 +63,22 @@ export const shikimoriApi = createApi({
                 return currentArg !== previousArg;
             },
         }),
+        getMangaList: builder.query<IShortManga[], IMangaParams>({
+            query: (params) => ({url: "mangas", params}),
+            serializeQueryArgs: ({endpointName}) => endpointName,
+            transformResponse: (mangas: IShortManga[]) => {
+                return mangas;
+            },
+            merge: (currentCacheData, newData, otherArgs) => {
+                if (otherArgs.arg.page !== 1)
+                    currentCacheData.push(...newData);
+                else
+                    return newData;
+            },
+            forceRefetch({currentArg, previousArg}) {
+                return currentArg !== previousArg;
+            }
+        })
     })
 });
 
@@ -70,4 +89,5 @@ export const {
     useGetAnimeByIdQuery,
     useGetAnimeRolesByIdQuery,
     useGetAnimeListQuery,
+    useGetMangaListQuery,
 } = shikimoriApi;

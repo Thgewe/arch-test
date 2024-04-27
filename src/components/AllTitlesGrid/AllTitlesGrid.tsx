@@ -2,9 +2,10 @@ import React from 'react';
 import cl from "./allTitlesGrid.module.css";
 import AllTitlesCard from "../AllTitlesCard/AllTitlesCard";
 import IShortAnime from "../../models/shikimoriAPI/IShortAnime";
+import {IShortManga} from "../../models/shikimoriAPI/IShortManga";
 
 interface IAllTitlesGridProps {
-    items: IShortAnime[],
+    items: IShortAnime[] | IShortManga[],
     type: "animes" | "mangas",
 }
 
