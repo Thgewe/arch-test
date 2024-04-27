@@ -1,0 +1,53 @@
+.buttons {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: .0625rem .1875rem 0 .1875rem;
+    margin: .0625rem 0 .125rem;
+}
+.fake {
+    display: block;
+    width: .875rem;
+    height: .875rem;
+    border: .0625rem solid #999999;
+    order: -1;
+    position: relative;
+    cursor: pointer;
+    margin-right: .625rem;
+}
+.fake::before {
+    content: '';
+    display: block;
+    width: .375rem;
+    height: .375rem;
+    position: absolute;
+    background-color: #999999;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.2s;
+}
+.btn {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+}
+.btn > input {
+    display: none;
+}
+.btn > input:checked + .fake::before {
+    opacity: 100;
+}
+.label {
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #555555;
+    font-family: helvetica, arial, sans-serif;
+    /*font-family: var(--font-alt);*/
+    font-size: .75rem;
+    line-height: 1.25rem;
+}

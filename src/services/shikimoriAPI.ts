@@ -3,10 +3,12 @@ import INews from "../models/shikimoriAPI/INews";
 import IShortAnime from "../models/shikimoriAPI/IShortAnime";
 import {IAnime} from "../models/shikimoriAPI/IAnime";
 import {IRoles} from "../models/shikimoriAPI/IRoles";
+import {IAnimeParams} from "../models/shikimoriAPI/IAnimeParams";
+import {BASE_API_URL} from "../utils/constants";
 
 export const shikimoriApi = createApi({
     reducerPath: "shikimoriApi",
-    baseQuery: fetchBaseQuery({baseUrl: "https://shikimori.one/api"}),
+    baseQuery: fetchBaseQuery({baseUrl: BASE_API_URL}),
     endpoints: (builder) => ({
         // The API returns "limit + 1" items if there are pages left
         getNewsList: builder.query<INews[], number | void>({
@@ -39,6 +41,22 @@ export const shikimoriApi = createApi({
                 url: `animes/${id}/roles`
             })
         }),
+        getAnimeList: builder.query<IShortAnime[], IAnimeParams>({
+            query: (params) => ({url: "animes", params}),
+            serializeQueryArgs: ({ endpointName }) => endpointName,
+            transformResponse: (animes: IShortAnime[]) => {
+                return animes;
+            },
+            merge: (currentCacheData, newData, otherArgs) => {
+                if (otherArgs.arg.page !== 1)
+                    currentCacheData.push(...newData);
+                else
+                    return newData;
+            },
+            forceRefetch({ currentArg, previousArg }) {
+                return currentArg !== previousArg;
+            },
+        }),
     })
 });
 
@@ -48,4 +66,5 @@ export const {
     useGetAnimeListMainOngoingQuery,
     useGetAnimeByIdQuery,
     useGetAnimeRolesByIdQuery,
+    useGetAnimeListQuery,
 } = shikimoriApi;

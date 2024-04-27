@@ -1,0 +1,40 @@
+.card {
+    color: var(--color-link);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 0;
+}
+.card:hover {
+    color: var(--color-highlighted);
+}
+.image {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+.image_wrapper {
+    height: 75%;
+    overflow: hidden;
+}
+.title {
+    transition: .2s color;
+    color: inherit;
+    line-height: 1.65;
+    margin-top: .3125rem;
+    font-size: .8125rem;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #123;
+    font-size: .6875rem;
+    line-height: 1.0625rem;
+}

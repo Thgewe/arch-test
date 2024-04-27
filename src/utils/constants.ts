@@ -7,3 +7,4 @@ export const NEWS_PAGE_ROUTE = "news/:id";
 export const ANIME_PAGE_ROUTE = "animes/:id";
 export const ALL_ANIME_PAGE_ROUTE = "animes";
 
+export const ANIMES_PER_PAGE = 20;
