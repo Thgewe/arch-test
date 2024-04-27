@@ -56,7 +56,7 @@ const AllMangaPage = () => {
     return (
         <div className={cl.page} ref={gridRef}>
             <div className={cl.descr}>
-                <h1>Аниме</h1>
+                <h1>Манга</h1>
                 <p>
                     На этой странице отображен список манг.<br/>
                     Используйте фильтры для поиска подходящего вам или воспользуйтесь поиском.
