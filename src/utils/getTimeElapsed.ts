@@ -2,6 +2,7 @@
 
 import ITime from "../models/utils/ITime";
 
+// TODO: ИСПРАВИТь
 export const getTimeSpan = (date: string | undefined) => {
 
     const timeSpan: ITime = {

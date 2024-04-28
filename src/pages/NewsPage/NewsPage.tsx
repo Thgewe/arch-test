@@ -5,6 +5,7 @@ import cl from "./newsPage.module.css";
 import {timeElapsed} from "../../utils/getTimeElapsed";
 import Topic from "../../components/Topic/Topic";
 import PageHeadline from "../../components/PageHeadline/PageHeadline";
+import CommentsList from "../../components/CommentsList/CommentsList";
 
 // TODO: error, loading, no data handling
 //       images and slider
@@ -38,7 +39,7 @@ const NewsPage = () => {
             <PageHeadline titleRu={data.topic_title}/>
             <div className={cl.author}>
                 <div className={cl.avatar}>
-                    <img className={cl.image} src={data.user.avatar} alt="user avatar"/>
+                    <img className={cl.image} src={data.user.avatar}     alt="user avatar"/>
                 </div>
                 <div className={cl.info}>
                     <Topic text={"новость"} type={"news"} />
@@ -50,6 +51,7 @@ const NewsPage = () => {
                 </div>
             </div>
             <div className={cl.text} dangerouslySetInnerHTML={{__html: formatText()}}></div>
+            <CommentsList commentable_id={data.id} />
         </>
     );
 };

@@ -1,0 +1,47 @@
+.comment {
+    font-family: var(--font-main);
+    margin-bottom: .9375rem;
+}
+.comment + .comment {
+    padding-top: .375rem;
+    border-top: .0625rem dashed #ddd;
+}
+.user {
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 2rem;
+    margin-bottom: .3125rem;
+}
+.avatar {
+    background-color: red;
+    width: 2rem;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.nickname {
+    color: var(--color-link);
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: .8125rem;
+    line-height: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: .625rem;
+}
+.created {
+    line-height: 1.65;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #7b8084;
+    display: inline;
+    font-size: .6875rem;
+    padding-left: .625rem;
+}
+.appeal {
+    text-decoration: none;
+    color: var(--color-link);
+}

@@ -7,6 +7,7 @@ import {BASE_API_IMAGE_SRC} from "../../utils/constants";
 import Description from "../../components/Description/Description";
 import CardGrid from "../../components/CardGrid/CardGrid";
 import InformationManga from "../../components/InformationManga/InformationManga";
+import CommentsList from "../../components/CommentsList/CommentsList";
 
 const MangaPage = () => {
 
@@ -47,6 +48,7 @@ const MangaPage = () => {
                     category={"characters"}
                     blockName={"Главные герои"}
                 />
+                <CommentsList commentable_id={data.topic_id} />
             </div>
         </>
     );

@@ -9,6 +9,7 @@ import {IShortManga} from "../models/shikimoriAPI/IShortManga";
 import {IMangaParams} from "../models/shikimoriAPI/IMangaParams";
 import {IFilterParams} from "../models/shikimoriAPI/IFilterParams";
 import {IManga} from "../models/shikimoriAPI/IManga";
+import {IComment} from "../models/shikimoriAPI/IComment";
 
 export const shikimoriApi = createApi({
     reducerPath: "shikimoriApi",
@@ -89,7 +90,17 @@ export const shikimoriApi = createApi({
             forceRefetch({currentArg, previousArg}) {
                 return currentArg !== previousArg;
             }
-        })
+        }),
+        getCommentsByIdAndTopic: builder.query<IComment[], string>({
+            query: (id) => ({
+                url: "comments",
+                params: {
+                    commentable_id: id,
+                    commentable_type: "Topic",
+                    limit: 30,
+                },
+            })
+        }),
     })
 });
 
@@ -103,4 +114,5 @@ export const {
     useGetMangaListQuery,
     useGetMangaByIdQuery,
     useGetMangaRolesByIdQuery,
+    useGetCommentsByIdAndTopicQuery,
 } = shikimoriApi;

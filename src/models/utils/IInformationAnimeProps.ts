@@ -4,7 +4,7 @@ import {IGenre} from "../shikimoriAPI/IGenre";
 export interface IInformationAnimeProps {
     kind: TShikimoriKind,
     episodes: number | undefined,
-    duration: number | undefined,
+    duration: string | undefined,
     status: string,
     genres: IGenre[],
     licensors: string[] | undefined,
