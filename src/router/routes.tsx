@@ -1,6 +1,6 @@
 import MainPage from "../pages/MainPage/MainPage";
 import NewsPage from "../pages/NewsPage/NewsPage";
-import {Navigate, RouteObject} from "react-router-dom";
+import {RouteObject} from "react-router-dom";
 import {
     ALL_ANIME_PAGE_ROUTE,
     ALL_MANGA_PAGE_ROUTE,
@@ -14,6 +14,7 @@ import App from "../App";
 import AllAnimePage from "../pages/AllAnimePage/AllAnimePage";
 import AllMangaPage from "../pages/AllMangaPage/AllMangaPage";
 import MangaPage from "../pages/MangaPage/MangaPage";
+import Page404 from "../pages/Page404/Page404";
 
 // TODO: 404 route
 
@@ -46,12 +47,12 @@ const routes: RouteObject[] = [
                 path: HOME_ROUTE,
                 element: <MainPage />,
             },
+            {
+                path: "*",
+                element: <Page404 />
+            }
         ]
     },
-    {
-        path: "*",
-        element: <Navigate to={HOME_ROUTE} />
-    }
 ]
 
 export default routes;
