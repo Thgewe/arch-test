@@ -1,44 +1,27 @@
 import React from 'react';
-import cl from './information.module.css';
+import cl from './informationAnime.module.css';
 import BlockName from "../BlockName/BlockName";
-import {IGenre} from "../../models/shikimoriAPI/IGenre";
-import TShikimoriKind from "../../models/shikimoriAPI/TShikimoriKind";
 import InformationProperty from "../InformationProperty/InformationProperty";
 import {whatKind} from "../../utils/whatKind";
 import {getDateDD_MMMM_YY} from "../../utils/getDateDD_MMMM_YY";
 import {whatRating} from "../../utils/whatRating";
+import {IInformationAnimeProps} from "../../models/utils/IInformationAnimeProps";
 
-interface IInformationProps {
-    kind: TShikimoriKind,
-    episodes: number | undefined,
-    duration: number | undefined,
-    status: string,
-    genres: IGenre[],
-    licensors: string[] | undefined,
-    license_name_ru: string | null | undefined,
-    rating: string | undefined,
-    aired_on: null | string,
-    next_episode_at: null | string | undefined,
-    japanese: string[],
-    english: string[],
-    synonyms: string[],
-}
-
-const Information = ({
-                                                kind,
-                                                episodes,
-                                                status,
-                                                genres,
-                                                licensors,
-                                                license_name_ru,
-                                                rating,
-                                                duration,
-                                                aired_on,
-                                                next_episode_at,
-                                                japanese,
-                                                english,
-                                                synonyms,
-                                            }: IInformationProps) => {
+const InformationAnime = ({
+                         kind,
+                         status,
+                         duration,
+                         episodes,
+                         genres,
+                         rating,
+                         licensors,
+                         license_name_ru,
+                         japanese,
+                         english,
+                         synonyms,
+                         aired_on,
+                         next_episode_at,
+}: IInformationAnimeProps) => {
     return (
         <div className={cl.info}>
             <BlockName type={'default'} text={'ИНФОРМАЦИЯ'}/>
@@ -66,4 +49,4 @@ const Information = ({
     );
 };
 
-export default Information;
+export default InformationAnime;

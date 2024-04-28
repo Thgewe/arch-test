@@ -6,13 +6,14 @@ import {
     ALL_MANGA_PAGE_ROUTE,
     ANIME_PAGE_ROUTE,
     APP_ROUTE,
-    HOME_ROUTE,
+    HOME_ROUTE, MANGA_PAGE_ROUTE,
     NEWS_PAGE_ROUTE
 } from "../utils/constants";
 import AnimePage from "../pages/AnimePage/AnimePage";
 import App from "../App";
 import AllAnimePage from "../pages/AllAnimePage/AllAnimePage";
 import AllMangaPage from "../pages/AllMangaPage/AllMangaPage";
+import MangaPage from "../pages/MangaPage/MangaPage";
 
 // TODO: 404 route
 
@@ -36,6 +37,10 @@ const routes: RouteObject[] = [
             {
                 path: ALL_MANGA_PAGE_ROUTE,
                 element: <AllMangaPage />
+            },
+            {
+                path: MANGA_PAGE_ROUTE,
+                element: <MangaPage />
             },
             {
                 path: HOME_ROUTE,

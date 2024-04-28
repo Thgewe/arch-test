@@ -8,6 +8,7 @@ import {BASE_API_URL} from "../utils/constants";
 import {IShortManga} from "../models/shikimoriAPI/IShortManga";
 import {IMangaParams} from "../models/shikimoriAPI/IMangaParams";
 import {IFilterParams} from "../models/shikimoriAPI/IFilterParams";
+import {IManga} from "../models/shikimoriAPI/IManga";
 
 export const shikimoriApi = createApi({
     reducerPath: "shikimoriApi",
@@ -63,6 +64,16 @@ export const shikimoriApi = createApi({
                 return currentArg !== previousArg;
             },
         }),
+        getMangaById: builder.query<IManga, string>({
+            query: (id) => ({
+                url: `mangas/${id}`
+            })
+        }),
+        getMangaRolesById: builder.query<IRoles[], string>({
+            query: (id) => ({
+                url: `mangas/${id}/roles`
+            })
+        }),
         getMangaList: builder.query<IShortManga[], IMangaParams>({
             query: (params) => ({url: "mangas", params}),
             serializeQueryArgs: ({endpointName}) => endpointName,
@@ -90,4 +101,6 @@ export const {
     useGetAnimeRolesByIdQuery,
     useGetAnimeListQuery,
     useGetMangaListQuery,
+    useGetMangaByIdQuery,
+    useGetMangaRolesByIdQuery,
 } = shikimoriApi;

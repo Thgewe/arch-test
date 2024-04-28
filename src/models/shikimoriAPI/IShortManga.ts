@@ -10,8 +10,8 @@ export interface IShortManga {
     kind: TShikimoriKind,
     score: string,
     status: string,
-    volumes: number,
-    chapters: number,
+    volumes: string,
+    chapters: string,
     aired_on: string,
     released_on: null | string,
 }

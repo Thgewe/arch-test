@@ -1,21 +1,18 @@
 import React from 'react';
-import cl from "./animePage.module.css";
+import cl from "./mangaPage.module.css";
 import {useParams} from "react-router-dom";
-import {useGetAnimeByIdQuery, useGetAnimeRolesByIdQuery} from "../../services/shikimoriAPI";
+import {useGetMangaByIdQuery, useGetMangaRolesByIdQuery} from "../../services/shikimoriAPI";
 import PageHeadline from "../../components/PageHeadline/PageHeadline";
-import Description from "../../components/Description/Description";
 import {BASE_API_IMAGE_SRC} from "../../utils/constants";
-import InformationAnime from "../../components/InformationAnime/InformationAnime";
-import Studio from "../../components/Studio/Studio";
+import Description from "../../components/Description/Description";
 import CardGrid from "../../components/CardGrid/CardGrid";
+import InformationManga from "../../components/InformationManga/InformationManga";
 
-// TODO: comments
-
-const AnimePage = () => {
+const MangaPage = () => {
 
     const { id } = useParams<{id: string}>() as {id: string};
-    const { data, isLoading, isError } = useGetAnimeByIdQuery(id);
-    const roles = useGetAnimeRolesByIdQuery(id);
+    const { data, isLoading, isError } = useGetMangaByIdQuery(id);
+    const roles = useGetMangaRolesByIdQuery(id);
 
     if (isLoading) return <div>Loading...</div>
     if (isError) return <div>Error</div>
@@ -28,23 +25,19 @@ const AnimePage = () => {
                 <div className={cl.mainImage}>
                     <img src={BASE_API_IMAGE_SRC + data.image.original} alt={data.name}/>
                 </div>
-                <InformationAnime
-                    key={data.id}
+                <InformationManga
                     kind={data.kind}
-                    status={data.status}
-                    duration={data.duration}
-                    episodes={data.episodes_aired}
-                    genres={data.genres}
-                    rating={data.rating}
+                    volumes={data.volumes}
+                    chapters={data.chapters}
                     licensors={data.licensors}
-                    license_name_ru={data.license_name_ru}
+                    status={data.status}
                     japanese={data.japanese}
                     english={data.english}
                     synonyms={data.synonyms}
                     aired_on={data.aired_on}
-                    next_episode_at={data.next_episode_at}
+                    genres={data.genres}
+                    license_name_ru={data.license_name_ru}
                 />
-                <Studio studios={data.studios} />
                 <div className={cl.descr}>
                     <Description description={data.description} />
                 </div>
@@ -59,4 +52,4 @@ const AnimePage = () => {
     );
 };
 
-export default AnimePage;
+export default MangaPage;
