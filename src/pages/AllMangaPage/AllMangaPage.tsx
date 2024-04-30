@@ -1,11 +1,11 @@
 import React, {useEffect, useRef, useState} from 'react';
 import cl from "./allMangaPage.module.css";
-import AllTitlesGrid from "../../components/AllTitlesGrid/AllTitlesGrid";
-import Filter from "../../components/Filter/Filter";
-import {IFilterParams} from "../../models/shikimoriAPI/IFilterParams";
-import {ANIMES_PER_PAGE} from "../../utils/constants";
-import {useGetMangaListQuery} from "../../services/shikimoriAPI";
-import debounce from "../../utils/debounce";
+import AllTitlesGrid from "../../features/AllTitles/AllTitlesGrid";
+import Filter from "../../features/Filter/Filter";
+import {IFilterParams} from "../../shared/models/shikimoriAPI/IFilterParams";
+import {ANIMES_PER_PAGE} from "../../shared/utils/constants";
+import {useGetMangaListQuery} from "../../shared/api/shikimoriAPI";
+import debounce from "../../shared/utils/debounce";
 
 // TODO: error, loading, no data handling
 

@@ -51,7 +51,7 @@
     display: block;
     width: 1.1875rem;
     height: .875rem;
-    background: url("../../images/svg/comments.svg") no-repeat;
+    background: url("../../shared/images/svg/comments.svg") no-repeat;
     background-size: contain;
 }
 .commentsCounter::after {
@@ -71,7 +71,7 @@
 }
 .time::before {
     content: '';
-    background: url("../../images/svg/feather.svg") no-repeat;
+    background: url("../../shared/images/svg/feather.svg") no-repeat;
     background-size: contain;
     display: block;
     width: .9375rem;

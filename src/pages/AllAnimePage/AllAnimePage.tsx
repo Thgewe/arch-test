@@ -1,11 +1,11 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {useGetAnimeListQuery} from "../../services/shikimoriAPI";
+import {useGetAnimeListQuery} from "../../shared/api/shikimoriAPI";
 import cl from "./allAnimePage.module.css";
-import debounce from "../../utils/debounce";
-import AllTitlesGrid from "../../components/AllTitlesGrid/AllTitlesGrid";
-import Filter from "../../components/Filter/Filter";
-import {IFilterParams} from "../../models/shikimoriAPI/IFilterParams";
-import {ANIMES_PER_PAGE} from "../../utils/constants";
+import debounce from "../../shared/utils/debounce";
+import AllTitlesGrid from "../../features/AllTitles/AllTitlesGrid";
+import Filter from "../../features/Filter/Filter";
+import {IFilterParams} from "../../shared/models/shikimoriAPI/IFilterParams";
+import {ANIMES_PER_PAGE} from "../../shared/utils/constants";
 
 const AllAnimePage = () => {
 

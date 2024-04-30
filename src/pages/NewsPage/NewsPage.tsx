@@ -1,11 +1,11 @@
 import React from 'react';
 import {useParams} from "react-router-dom";
-import {useGetNewsItemByIdQuery} from "../../services/shikimoriAPI";
+import {useGetNewsItemByIdQuery} from "../../shared/api/shikimoriAPI";
 import cl from "./newsPage.module.css";
-import {timeElapsed} from "../../utils/getTimeElapsed";
-import Topic from "../../components/Topic/Topic";
-import PageHeadline from "../../components/PageHeadline/PageHeadline";
-import CommentsList from "../../components/CommentsList/CommentsList";
+import {timeElapsed} from "../../shared/utils/getTimeElapsed";
+import Topic from "../../entities/Topic/Topic";
+import PageHeadline from "../../entities/PageHeadline/PageHeadline";
+import CommentsList from "../../features/Comment/CommentsList";
 
 // TODO: error, loading, no data handling
 //       images and slider

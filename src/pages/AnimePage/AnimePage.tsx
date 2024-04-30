@@ -4,14 +4,14 @@ import {useParams} from "react-router-dom";
 import {
     useGetAnimeByIdQuery,
     useGetAnimeRolesByIdQuery,
-} from "../../services/shikimoriAPI";
-import PageHeadline from "../../components/PageHeadline/PageHeadline";
-import Description from "../../components/Description/Description";
-import {BASE_API_IMAGE_SRC} from "../../utils/constants";
-import InformationAnime from "../../components/InformationAnime/InformationAnime";
-import Studio from "../../components/Studio/Studio";
-import CardGrid from "../../components/CardGrid/CardGrid";
-import CommentsList from "../../components/CommentsList/CommentsList";
+} from "../../shared/api/shikimoriAPI";
+import PageHeadline from "../../entities/PageHeadline/PageHeadline";
+import Description from "../../features/Description/Description";
+import {BASE_API_IMAGE_SRC} from "../../shared/utils/constants";
+import InformationAnime from "../../features/InformationBlock/InformationAnime";
+import Studio from "../../features/Studio/Studio";
+import CardGrid from "../../features/CharactersGrid/CharactersGrid";
+import CommentsList from "../../features/Comment/CommentsList";
 
 // TODO: comments
 

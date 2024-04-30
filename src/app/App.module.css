@@ -1,0 +1,27 @@
+.App {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url("../shared/images/png/square_bg.png") repeat;
+}
+.main {
+    flex: 2;
+    width: 100%;
+    padding: var(--padding-inline-default);
+    max-width: var(--max-width);
+    align-self: center;
+    background-color: #fff;
+    overflow: hidden;
+    -webkit-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.05);
+    -moz-box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.05);
+    box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.05);
+}
+.header {
+    width: 100%;
+    z-index: calc(var(--z-index-shade) - 1);
+    background-color: var(--color-header);
+    -webkit-box-shadow: 0px 0px 40px 2px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 0px 40px 2px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 40px 2px rgba(0,0,0,0.1);
+}

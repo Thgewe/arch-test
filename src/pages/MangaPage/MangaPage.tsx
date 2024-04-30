@@ -1,13 +1,13 @@
 import React from 'react';
 import cl from "./mangaPage.module.css";
 import {useParams} from "react-router-dom";
-import {useGetMangaByIdQuery, useGetMangaRolesByIdQuery} from "../../services/shikimoriAPI";
-import PageHeadline from "../../components/PageHeadline/PageHeadline";
-import {BASE_API_IMAGE_SRC} from "../../utils/constants";
-import Description from "../../components/Description/Description";
-import CardGrid from "../../components/CardGrid/CardGrid";
-import InformationManga from "../../components/InformationManga/InformationManga";
-import CommentsList from "../../components/CommentsList/CommentsList";
+import {useGetMangaByIdQuery, useGetMangaRolesByIdQuery} from "../../shared/api/shikimoriAPI";
+import PageHeadline from "../../entities/PageHeadline/PageHeadline";
+import {BASE_API_IMAGE_SRC} from "../../shared/utils/constants";
+import Description from "../../features/Description/Description";
+import CardGrid from "../../features/CharactersGrid/CharactersGrid";
+import InformationManga from "../../features/InformationBlock/InformationManga";
+import CommentsList from "../../features/Comment/CommentsList";
 
 const MangaPage = () => {
 

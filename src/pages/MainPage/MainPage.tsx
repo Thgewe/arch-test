@@ -1,9 +1,9 @@
 import React, {useState, useRef, useEffect} from 'react';
-import NewsList from "../../components/NewsList/NewsList";
-import Headline from "../../components/Headline/Headline";
-import {useGetAnimeListMainOngoingQuery, useGetNewsListQuery} from "../../services/shikimoriAPI";
-import debounce from "../../utils/debounce";
-import OngoingsTrack from "../../components/OngoingsTrack/OngoingsTrack";
+import NewsList from "../../features/News/NewsList";
+import Headline from "../../entities/Headline/Headline";
+import {useGetAnimeListMainOngoingQuery, useGetNewsListQuery} from "../../shared/api/shikimoriAPI";
+import debounce from "../../shared/utils/debounce";
+import OngoingsTrack from "../../entities/OngoingsTrack/OngoingsTrack";
 
 // TODO: error, loading, no data handling
 
