@@ -7,6 +7,10 @@
     margin-bottom: 20px;
     grid-row: 1/4;
 }
+.mainImage > img {
+    width: 14.0625rem;
+    height: 21.875rem;
+}
 .descr {
     grid-column: 4/-4;
 }
