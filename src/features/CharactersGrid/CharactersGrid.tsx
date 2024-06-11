@@ -46,6 +46,8 @@ blockName,
         <div>Loading...</div>
     </div>
 
+    if (!items) return <div>Something went wrong</div>
+
     return (
         <div className={cl.block}>
             <BlockName type={'default'} text={blockName} />

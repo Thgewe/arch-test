@@ -18,47 +18,47 @@ import CommentsList from "../../features/Comment/CommentsList";
 const AnimePage = () => {
 
     const { id } = useParams<{id: string}>() as {id: string};
-    const { data, isLoading, isError } = useGetAnimeByIdQuery(id);
+    const anime = useGetAnimeByIdQuery(id);
     const roles = useGetAnimeRolesByIdQuery(id);
 
-    if (isLoading) return <div>Loading...</div>
-    if (isError) return <div>Error</div>
-    if (!data) return <div>Something went wrong</div>
+    if (anime.isLoading) return <div>Loading...</div>
+    if (anime.isError) return <div>Error</div>
+    if (!anime.currentData) return <div>Something went wrong</div>
 
     return (
         <>
-            <PageHeadline titleRu={data.russian} titleEn={data.name}/>
+            <PageHeadline titleRu={anime.currentData.russian} titleEn={anime.currentData.name}/>
             <div className={cl.main}>
                 <div className={cl.mainImage}>
-                    <img src={BASE_API_IMAGE_SRC + data.image.original} alt={data.name}/>
+                    <img src={BASE_API_IMAGE_SRC + anime.currentData.image.original} alt={anime.currentData.name}/>
                 </div>
                 <InformationAnime
-                    key={data.id}
-                    kind={data.kind}
-                    status={data.status}
-                    duration={data.duration}
-                    episodes={data.episodes_aired}
-                    genres={data.genres}
-                    rating={data.rating}
-                    licensors={data.licensors}
-                    license_name_ru={data.license_name_ru}
-                    japanese={data.japanese}
-                    english={data.english}
-                    synonyms={data.synonyms}
-                    aired_on={data.aired_on}
-                    next_episode_at={data.next_episode_at}
+                    key={anime.currentData.id}
+                    kind={anime.currentData.kind}
+                    status={anime.currentData.status}
+                    duration={anime.currentData.duration}
+                    episodes={anime.currentData.episodes_aired}
+                    genres={anime.currentData.genres}
+                    rating={anime.currentData.rating}
+                    licensors={anime.currentData.licensors}
+                    license_name_ru={anime.currentData.license_name_ru}
+                    japanese={anime.currentData.japanese}
+                    english={anime.currentData.english}
+                    synonyms={anime.currentData.synonyms}
+                    aired_on={anime.currentData.aired_on}
+                    next_episode_at={anime.currentData.next_episode_at}
                 />
-                <Studio studios={data.studios} />
+                <Studio studios={anime.currentData.studios} />
                 <div className={cl.descr}>
-                    <Description description={data.description} />
+                    <Description description={anime.currentData.description} />
                 </div>
                 <CardGrid
-                    isLoading={isLoading}
+                    isLoading={roles.isLoading}
                     items={roles.data}
                     category={"characters"}
                     blockName={"Главные герои"}
                 />
-                <CommentsList commentable_id={data.topic_id} />
+                <CommentsList commentable_id={anime.currentData.topic_id} />
             </div>
         </>
     );

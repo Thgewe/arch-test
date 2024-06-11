@@ -32,7 +32,7 @@ const MainPage = () => {
     }, [isFetching])
 
     if (isLoading || animeList.isLoading) return <div>Loading...</div>
-    if (isError || animeList.isError) return <div>Error</div>
+    if (isError) return <div>Error</div>
     if (!data) return <div>Something went wrong</div>
 
     return (
